@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10.0)
-project(KeyMapper VERSION 0.1.0 LANGUAGES C CXX)
+project(KeyMapper VERSION 1.0.0)
 
 add_executable(KeyMapper main.cpp)
 
