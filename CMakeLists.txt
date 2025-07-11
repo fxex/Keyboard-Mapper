@@ -13,4 +13,5 @@ include_directories(include)
 add_executable(KeyMapper 
 main.cpp
 src/HookManager.cpp
+src/KeyboardMapper.cpp
 )

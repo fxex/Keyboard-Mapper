@@ -1,20 +1,27 @@
 #include <windows.h>
 #include <iostream>
 #include <HookManager.h>
+#include <KeyboardMapper.h>
 
+using namespace std;
 int main(int, char**){
-    HHOOK hHook = SetWindowsHookEx(WH_KEYBOARD_LL, KeyBoardProcedure, NULL, 0);
-    if (hHook == NULL) {
-        std::cerr << "Error al instalar el hook: " << GetLastError();
+    string nombreArchivo = "mapeo.txt";
+    if (!archivoExiste(nombreArchivo)) {
+        crearArchivoDefecto(nombreArchivo);
     }
 
-    MSG msg;
-    while (GetMessage(&msg, NULL, 0, 0)) {
-        TranslateMessage(&msg);
-        DispatchMessage(&msg);
-    }
+    // HHOOK hHook = SetWindowsHookEx(WH_KEYBOARD_LL, KeyBoardProcedure, NULL, 0);
+    // if (hHook == NULL) {
+    //     std::cerr << "Error al instalar el hook: " << GetLastError();
+    // }
 
-    UnhookWindowsHookEx(hHook);
+    // MSG msg;
+    // while (GetMessage(&msg, NULL, 0, 0)) {
+    //     TranslateMessage(&msg);
+    //     DispatchMessage(&msg);
+    // }
+
+    // UnhookWindowsHookEx(hHook);
 
     return 0;    
 }
