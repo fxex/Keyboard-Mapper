@@ -34,7 +34,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 12,
+				"line" : 11,
 				"parent" : 0
 			}
 		]
@@ -52,7 +52,11 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "C:/Users/hugoa/Desktop/Proyectos/KeyMapper/include"
+					"path" : "C:/Users/hugoa/Desktop/Proyectos/KeyMapper/include,"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "C:/Users/hugoa/Desktop/Proyectos/KeyMapper/external"
 				}
 			],
 			"language" : "CXX",

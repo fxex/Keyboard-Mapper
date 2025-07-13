@@ -10,6 +10,9 @@ int main(int, char**){
         crearArchivoDefecto(nombreArchivo);
     }
 
+    map<char, char> mapeoTeclas = cargarMapeoTeclas(nombreArchivo);
+    
+
     // HHOOK hHook = SetWindowsHookEx(WH_KEYBOARD_LL, KeyBoardProcedure, NULL, 0);
     // if (hHook == NULL) {
     //     std::cerr << "Error al instalar el hook: " << GetLastError();

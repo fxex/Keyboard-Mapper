@@ -66,3 +66,7 @@ map<char, char> cargarMapeoTeclas(const string& nombreArchivo){
     }
     return mapeo;
 }
+
+void modificarMapeoTecla(map<char, char>& mapeo, char teclaOriginal, char teclaNueva){
+    mapeo[teclaOriginal] = teclaNueva;
+}
