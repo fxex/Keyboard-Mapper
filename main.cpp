@@ -10,7 +10,10 @@ int main(int, char**){
         crearArchivoDefecto(nombreArchivo);
     }
 
-    map<char, char> mapeoTeclas = cargarMapeoTeclas(nombreArchivo);
+    map<int, int> mapeoTeclas = cargarMapeoTeclas(nombreArchivo);
+
+    // modificarMapeoTecla(mapeoTeclas, 'a', 'b');
+    // actualizarArchivo(mapeoTeclas, nombreArchivo);
     
 
     // HHOOK hHook = SetWindowsHookEx(WH_KEYBOARD_LL, KeyBoardProcedure, NULL, 0);

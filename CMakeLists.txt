@@ -8,10 +8,11 @@ set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)
 
-include_directories(include, external)
+include_directories(include)
 
 add_executable(KeyMapper 
 main.cpp
 src/HookManager.cpp
 src/KeyboardMapper.cpp
+src/TeclaEventDispatcher.cpp
 )

@@ -21,33 +21,10 @@ void crearArchivoDefecto(const string& nombreArchivo){
         return;
     }
 
-    archivo << "a a\n";
-    archivo << "b b\n";
-    archivo << "c c\n";
-    archivo << "d d\n";
-    archivo << "e e\n";
-    archivo << "f f\n";
-    archivo << "g g\n";
-    archivo << "h h\n";
-    archivo << "i i\n";
-    archivo << "j j\n";
-    archivo << "k k\n";
-    archivo << "l l\n";
-    archivo << "m m\n";
-    archivo << "n n\n";
-    archivo << "ñ ñ\n";
-    archivo << "o o\n";
-    archivo << "p p\n";
-    archivo << "q q\n";
-    archivo << "r r\n";
-    archivo << "s s\n";
-    archivo << "t t\n";
-    archivo << "u u\n";
-    archivo << "v v\n";
-    archivo << "w w\n";
-    archivo << "x x\n";
-    archivo << "y y\n";
-    archivo << "z z\n";  
+    for (int vkcode = 0x01; vkcode < 0xFE; vkcode++) {
+        archivo << vkcode << " " << vkcode << endl;
+    }
+    
     archivo.close();
 }
 
@@ -57,16 +34,38 @@ void crearArchivoDefecto(const string& nombreArchivo){
  * @param nombreArchivo Nombre del archivo que contiene el mapeo de teclas.
  * @return Un mapa que relaciona las teclas originales con las teclas mapeadas.
  */
-map<char, char> cargarMapeoTeclas(const string& nombreArchivo){
-    map<char, char> mapeo;
+map<int, int> cargarMapeoTeclas(const string& nombreArchivo){
+    map<int, int> mapeo;
     ifstream archivo(nombreArchivo);
-    char from, to;
+    int from, to;
     while (archivo >> from >> to) {
         mapeo[from] = to;
     }
     return mapeo;
 }
 
-void modificarMapeoTecla(map<char, char>& mapeo, char teclaOriginal, char teclaNueva){
-    mapeo[teclaOriginal] = teclaNueva;
-}
+// /**
+//  * @fn modificarMapeoTecla
+//  * @brief Modifica el mapeo de teclas cargado en memoria
+//  * @param mapeo Estructura de datos map<int, int> del mapeo de teclas.
+//  * @param teclaOriginal tecla que se encuentra cargada en el mapeo.
+//  * @param teclaNueva tecla que se presionara en vez de la tecla original
+//  */
+// void modificarMapeoTecla(map<int, int>& mapeo, int teclaOriginal, int teclaNueva){
+//     mapeo[teclaOriginal] = teclaNueva;
+// }
+
+// /**
+//  * @fn actualizarArchivo
+//  * @brief Actualiza el archivo de mapeo de teclas
+//  * @param mapeo Estructura de datos map<int, int> del mapeo de teclas
+//  * @param nombreArchivo Nombre del archivo de mapeo
+// */
+// void actualizarArchivo(map<int, int>& mapeo, const string& nombreArchivo){
+//     ofstream archivo(nombreArchivo, ios::trunc);
+//     for (auto const& teclado : mapeo){
+//         // cout<< teclado.first << " " << teclado.second << endl;
+//         archivo << teclado.first << " " << teclado.second << endl;
+//     }
+//     archivo.close();
+// }
